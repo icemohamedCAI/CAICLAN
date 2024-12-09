@@ -1,0 +1,175 @@
+--[[
+    WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "CLAN CAI", HidePremium = false, SaveConfig = true, ConfigFolder = "CAI"})
+local Tab = Window:MakeTab({
+    Name = "سكربتات الكلان ",
+    Icon = "rbxassetid://84720311001938",
+    PremiumOnly = false
+})
+
+OrionLib:MakeNotification({
+    Name = "CAI",
+    Content = "منور الكلان 🌪❄",
+    Image = "rbxassetid://84720311001938",
+    Time = 10
+})
+
+Tab:AddButton({
+    Name = "سكربت الرحمه |nokia",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Ndora1/Ndora1/main/Nokia%20Hub.lua'))()
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name = "سكربت تنقل اضغط اي مكان بلماب (بتلاقيه بلانفنتوري)",
+    Callback = function()
+        pcall(function()
+            local mouse = game.Players.LocalPlayer:GetMouse()
+            local tool = Instance.new("Tool")
+            tool.RequiresHandle = false
+            tool.Name = "Tp tool(Equip to Click TP)"
+            tool.Activated:connect(function()
+                local pos = mouse.Hit + Vector3.new(0,2.5,0)
+                pos = CFrame.new(pos.X, pos.Y, pos.Z)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+            end)
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name = "سكربت سكنات من صنع ايات |AYAT VIP",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/speedwave1/speed_wave/refs/heads/main/Aya_VIP'))()
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name ="سكربت طيران ",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name = "سكربت الموسيقى (متنوع) ",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/M1ZZ001/BrookhavenR4D/main/Brookhaven%20R4D%20Script'))()
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name = "سكربت الادمن",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name = "اقوى سكربت بماب البيوت حاليا",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-rochips-universal-18294"))()
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name = "ثاني اقوى سكربت ماب بيوت",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/sXPiterXs1111/Sanderx3.25/main/sanderxv3.25.lua"))()
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name = "سكربت جديد بماب البيوت",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/RFRR1CH4RD/Loader/main/Salvatore.lua"))()
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name = "سكربت ماب بيوت حلو",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Hyz0r-Dev404/Hyz0/refs/heads/main/Working%25Hyz0r-Hub.md'))()
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name = "سكربت قوي مره بماب البيوت",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Trev0rZ/LoaderM/refs/heads/main/ImperiaHub-lWorking.lua'))()
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name = "سكربت رقصات",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://scriptblox.com/raw/Brookhaven-RP-all-emotes-6849"))()
+        end)
+    end    
+})
+
+Tab:AddButton({
+    Name = "سكربت عدم الخروج من الماب بعد 15 دقيقة (afk) ",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/brosula123/Anti-afk/main/Bl%C3%B8xzScript"))()
+        end)
+    end    
+})
+
+local Tab2 = Window:MakeTab({
+    Name = "الاعب",
+    Icon = "rbxassetid://84720311001938",
+    PremiumOnly = false
+})
+
+Tab2:AddSlider({
+    Name = "سرعة اللاعب",
+    Min = 16,
+    Max = 600,
+    Default = 5,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "WS",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end    
+})
+
+Tab2:AddSlider({
+    Name = "قوة القفز",
+    Min = 0,
+    Max = 20,
+    Default = 5,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "JumpPower",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end    
+})
